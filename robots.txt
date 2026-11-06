@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://asthor.com.ar/sitemap.xml

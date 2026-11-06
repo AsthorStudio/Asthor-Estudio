@@ -1,0 +1,21 @@
+/* ===== MARCA ASTHOR ESTUDIO / ASTHOR APP =====
+   Paleta única. Usar este archivo en ambas webs y en la app. */
+:root{
+  /* Naranja: acción principal (botones, precios, llamados a comprar) */
+  --coral:#EE6A1F;   --orange:#FF9F43;
+  /* Lila: identidad de marca (menú, secciones, títulos destacados) */
+  --violet:#7F63DB;  --violet-soft:#9B7EE8;
+  /* Celeste: fondos suaves y acciones secundarias */
+  --sky:#7CCBF2;     --sky-soft:#B5E3F8;
+  /* Menta: confianza y "resuelto" (tildes, estados OK) */
+  --teal:#3DCB9A;
+  /* Acento cálido suave */
+  --yellow:#FFC27A;
+  /* Neutros */
+  --ink:#2F2A5A; --muted:#625F86; --bg:#FBFAFF;
+  /* Noche: violeta profundo (aclarado) para paneles y logo */
+  --night:#3A2A86; --night-2:#5A44B8;
+  --gold:#F2B84B;
+  --r:24px;
+  --shadow:0 12px 30px rgba(127,99,219,.15);
+}

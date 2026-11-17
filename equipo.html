@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Link del formulario | Equipo Asthor</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta name="theme-color" content="#3A2A86">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#EFE9FF 0,var(--bg) 340px)}
+    .wrap{max-width:560px;margin:0 auto;padding:24px 16px 56px}
+    h1{font-family:Fredoka,sans-serif;color:var(--night);font-size:1.9rem;margin:.2em 0}
+    p{color:var(--muted);margin:0 0 16px}
+    .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:20px;display:grid;gap:14px}
+    label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+    label small{font-weight:400;color:var(--muted)}
+    input{font:inherit;padding:12px 14px;border:2px solid #E6E0FA;border-radius:14px;width:100%}
+    input:focus{outline:none;border-color:var(--violet)}
+    .out{background:#F3EDFF;border-radius:14px;padding:12px;word-break:break-all;font-size:.85rem;color:var(--ink)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    button,a.btn{border:0;cursor:pointer;font:inherit;font-weight:600;color:#fff;text-align:center;text-decoration:none;padding:13px 10px;border-radius:999px;background:linear-gradient(135deg,var(--coral),var(--orange));display:block}
+    a.wa{background:#25D366}
+    .off{opacity:.45;pointer-events:none}
+    .ok{color:var(--teal);font-size:.85rem;min-height:1.2em;margin:0;text-align:center}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Link del formulario</h1>
+  <p>Generá tu link personal. Cuando el cliente complete el formulario, las respuestas te llegan a <b>tu</b> WhatsApp.</p>
+  <div class="card">
+    <label>Tu nombre <small>(opcional, se muestra en el mensaje)</small><input id="de" type="text" placeholder="Ej: Nicolás" autocomplete="given-name"></label>
+    <label>Tu WhatsApp <small>con código de área, sin 0 ni 15</small><input id="to" type="tel" inputmode="tel" placeholder="Ej: 11 1234 5678"></label>
+    <label>WhatsApp del cliente <small>(opcional, para enviárselo directo)</small><input id="cl" type="tel" inputmode="tel" placeholder="Ej: 11 8765 4321"></label>
+    <div class="out" id="out">Completá tu WhatsApp para generar el link.</div>
+    <div class="row">
+      <button type="button" id="copy" class="off">Copiar link</button>
+      <a class="btn wa off" id="send" href="#" target="_blank" rel="noopener">Enviar al cliente</a>
+    </div>
+    <p class="ok" id="ok"></p>
+  </div>
+</div>
+<script>
+const $ = (s) => document.querySelector(s);
+function normAR(v){let d=String(v||"").replace(/\D/g,"").replace(/^00/,"");if(d.startsWith("549"))return d;if(d.startsWith("54"))return "549"+d.slice(2);d=d.replace(/^0/,"");return d.length>=10?"549"+d:"";}
+const store={get(k){try{return localStorage.getItem(k)||""}catch(e){return ""}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+$("#de").value=store.get("asthor_de"); $("#to").value=store.get("asthor_to");
+let link="";
+function upd(){
+  store.set("asthor_de",$("#de").value); store.set("asthor_to",$("#to").value);
+  const to=normAR($("#to").value), de=$("#de").value.trim(), cl=normAR($("#cl").value);
+  if(!to){link="";$("#out").textContent="Completá tu WhatsApp para generar el link.";$("#copy").classList.add("off");$("#send").classList.add("off");return;}
+  const u=new URL("formulario.html",location.href); u.search=""; u.hash="";
+  u.searchParams.set("to",to); if(de)u.searchParams.set("de",de);
+  link=u.href; $("#out").textContent=link; $("#copy").classList.remove("off");
+  const msg="¡Hola! Soy "+(de||"del equipo de Asthor Estudio")+". Para conocer tu proyecto y ver cómo ayudarte, completá este formulario cortito: "+link;
+  $("#send").href="https://wa.me/"+(cl||"")+"?text="+encodeURIComponent(msg);
+  $("#send").classList.remove("off");
+}
+document.addEventListener("input",upd);
+$("#copy").addEventListener("click",async()=>{
+  try{await navigator.clipboard.writeText(link);$("#ok").textContent="¡Link copiado!";}
+  catch(e){const r=document.createRange();r.selectNodeContents($("#out"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("#ok").textContent="Seleccionado: copialo manualmente.";}
+});
+upd();
+</script>
+</body>
+</html>

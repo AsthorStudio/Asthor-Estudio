@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contanos tu proyecto | Asthor Estudio</title>
+  <meta name="description" content="Contanos qué querés impulsar en tu negocio. Te escribimos por WhatsApp para conversar sobre tu proyecto.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta name="theme-color" content="#3A2A86">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Asthor Estudio">
+  <meta property="og:title" content="Contanos qué querés impulsar en tu negocio">
+  <meta property="og:description" content="Completá este formulario cortito y te escribimos por WhatsApp para conversar sobre tu proyecto.">
+  <meta property="og:image" content="https://asthor.com.ar/img/og-asthor.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://asthor.com.ar/formulario.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#EFE9FF 0,var(--bg) 340px)}
+    .wrap{max-width:680px;margin:0 auto;padding:20px 16px 56px}
+    .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .top img{height:54px;width:auto}
+    .top a.back{font-size:.9rem;color:var(--violet);text-decoration:none;font-weight:500}
+    h1{font-family:Fredoka,sans-serif;font-size:clamp(1.7rem,6vw,2.3rem);line-height:1.15;margin:.2em 0 .3em;color:var(--night)}
+    .lead{color:var(--muted);margin:0 0 22px}
+    form{display:grid;gap:16px}
+    fieldset{border:0;margin:0;padding:20px;background:#fff;border-radius:var(--r);box-shadow:var(--shadow)}
+    legend{padding:0;float:left;width:100%;font-weight:600;font-size:1.02rem;margin-bottom:4px}
+    legend+*{clear:both}
+    .hint{display:block;font-size:.85rem;color:var(--muted);margin:2px 0 12px;font-weight:400}
+    .opt{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:2px solid #E6E0FA;border-radius:16px;margin-top:8px;cursor:pointer;transition:border-color .2s,background .2s}
+    .opt:hover{border-color:var(--violet-soft)}
+    .opt input{margin:3px 0 0;width:20px;height:20px;accent-color:var(--coral);flex:none}
+    .opt:has(input:checked){border-color:var(--coral);background:#FFF5EC}
+    input[type=text],input[type=url],input[type=tel],textarea{width:100%;font:inherit;padding:12px 14px;border:2px solid #E6E0FA;border-radius:14px;background:#fff;color:var(--ink)}
+    textarea{min-height:96px;resize:vertical}
+    input:focus,textarea:focus{outline:none;border-color:var(--violet)}
+    .opt:focus-within{border-color:var(--violet)}
+    .q[hidden]{display:none}
+    .err{color:#C2331F;font-size:.85rem;margin:8px 0 0;display:none}
+    .bad .err{display:block}
+    .bad input[type=text],.bad input[type=tel],.bad textarea{border-color:#C2331F}
+    .go{border:0;cursor:pointer;font:inherit;font-weight:600;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,var(--coral),var(--orange));padding:16px 22px;border-radius:999px;box-shadow:0 10px 24px rgba(238,106,31,.35)}
+    .go:active{transform:scale(.98)}
+    .thanks{display:none;background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:28px 22px;text-align:center}
+    .thanks h2{font-family:Fredoka,sans-serif;color:var(--night);margin:.2em 0}
+    .thanks a{display:inline-block;margin-top:10px;color:#fff;background:#25D366;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600}
+    .done form{display:none}.done .thanks{display:block}
+    .small{font-size:.8rem;color:var(--muted);text-align:center;margin-top:6px}
+  </style>
+</head>
+<body>
+<div class="wrap" id="page">
+  <div class="top">
+    <a href="index.html"><img src="img/asthor-word.webp" alt="Asthor Estudio" width="816" height="227"></a>
+    <a class="back" href="index.html">← Volver</a>
+  </div>
+  <h1>Contanos qué querés impulsar en tu negocio</h1>
+  <p class="lead">¿Querés crear una página para tus servicios, trabajar una decisión de tu negocio o combinar las dos cosas? Contanos en qué momento estás. Te vamos a escribir por WhatsApp para conversar sobre tu proyecto.</p>
+
+  <form id="f" novalidate>
+    <fieldset class="q" id="q1">
+      <legend>1. ¿Qué te gustaría trabajar con Asthor?</legend>
+      <span class="hint">Elegí una opción.</span>
+      <label class="opt"><input type="radio" name="r1" value="Crear o renovar la página web de mi negocio" data-k="web"><span>Crear o renovar la página web de mi negocio.</span></label>
+      <label class="opt"><input type="radio" name="r1" value="Trabajar mi liderazgo o una decisión de mi negocio con coaching" data-k="coach"><span>Trabajar mi liderazgo o una decisión de mi negocio con coaching.</span></label>
+      <label class="opt"><input type="radio" name="r1" value="Crear mi página y trabajar primero en la claridad de mi propuesta" data-k="both"><span>Crear mi página y trabajar primero en la claridad de mi propuesta.</span></label>
+      <label class="opt"><input type="radio" name="r1" value="Todavía estoy explorando y me gustaría orientación" data-k="explore"><span>Todavía estoy explorando y me gustaría orientación.</span></label>
+      <p class="err">Elegí una opción.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q2">
+      <legend><label for="n2">2. ¿Cómo se llama tu negocio y a qué se dedica?</label></legend>
+      <span class="hint">Si todavía estás desarrollando tu idea, contanos brevemente qué querés ofrecer.</span>
+      <textarea id="n2" name="a2"></textarea>
+      <p class="err">Contanos brevemente.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q3" hidden>
+      <legend>3. ¿Ya tenés claro qué servicio querés ofrecer desde tu página?</legend>
+      <label class="opt"><input type="radio" name="r3" value="Sí, ya sé qué quiero ofrecer y a quién"><span>Sí, ya sé qué quiero ofrecer y a quién.</span></label>
+      <label class="opt"><input type="radio" name="r3" value="Tengo una idea y me gustaría ordenarla antes de diseñar la página"><span>Tengo una idea y me gustaría ordenarla antes de diseñar la página.</span></label>
+      <label class="opt"><input type="radio" name="r3" value="Tengo varias propuestas y necesito definir cuál mostrar primero"><span>Tengo varias propuestas y necesito definir cuál mostrar primero.</span></label>
+      <p class="err">Elegí una opción.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q4" hidden>
+      <legend><label for="n4">4. ¿Qué te gustaría poder decidir o cambiar con el acompañamiento?</label></legend>
+      <span class="hint">Podés mencionar una decisión sobre tu oferta, algo que te cuesta delegar o un desafío con tu equipo.</span>
+      <textarea id="n4" name="a4"></textarea>
+      <p class="err">Contanos brevemente.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q5">
+      <legend><label for="n5">5. ¿Tenés una página o un perfil donde podamos conocer tu trabajo?</label></legend>
+      <span class="hint">Opcional. Pegá el enlace.</span>
+      <input type="text" id="n5" name="a5" inputmode="url" autocomplete="url" placeholder="https://">
+    </fieldset>
+
+    <fieldset class="q" id="q6">
+      <legend><label for="n6">6. ¿Cómo te llamás?</label></legend>
+      <input type="text" id="n6" name="a6" autocomplete="name">
+      <p class="err">Escribí tu nombre.</p>
+    </fieldset>
+
+    <fieldset class="q" id="q7">
+      <legend><label for="n7">7. ¿A qué WhatsApp podemos escribirte?</label></legend>
+      <span class="hint">Incluí el código de área.</span>
+      <input type="tel" id="n7" name="a7" inputmode="tel" autocomplete="tel" placeholder="Ej: 11 1234 5678">
+      <p class="err">Escribí un número válido, con código de área.</p>
+    </fieldset>
+
+    <button class="go" type="submit">Quiero conversar con Asthor</button>
+    <p class="small">Se abre WhatsApp con tus respuestas listas para enviar. Al enviar aceptás las <a href="terminos.html" style="color:var(--violet)">Bases y condiciones</a> y que usemos tus datos para responder tu consulta.</p>
+  </form>
+
+  <div class="thanks" id="thanks" role="status">
+    <div style="font-size:2.4rem">✅</div>
+    <h2>¡Gracias!</h2>
+    <p>Gracias por contarnos sobre tu negocio. Recibimos tu consulta y te vamos a escribir por WhatsApp para conversar sobre el próximo paso.</p>
+    <p class="small">Si WhatsApp no se abrió, tocá acá para enviar tus respuestas:</p>
+    <a id="again" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+  </div>
+</div>
+
+<script>
+const WHATSAPP_DEFAULT = "5491157300560"; // número de Asthor (el mismo de la web)
+const qs = new URLSearchParams(location.search);
+// Normaliza números de Argentina a formato wa.me (549 + área + número)
+function normAR(v) {
+  let d = String(v || "").replace(/\D/g, "").replace(/^00/, "");
+  if (d.startsWith("549")) return d;
+  if (d.startsWith("54")) return "549" + d.slice(2);
+  d = d.replace(/^0/, "");
+  return d.length >= 10 ? "549" + d : "";
+}
+const WHATSAPP = normAR(qs.get("to")) || WHATSAPP_DEFAULT; // ?to= número del asesor que envía el link
+const DE = (qs.get("de") || "").slice(0, 40);               // ?de= nombre del asesor (opcional)
+const $ = (s) => document.querySelector(s);
+const f = $("#f");
+const key = () => (f.elements.r1.value ? f.querySelector('input[name="r1"]:checked').dataset.k : "");
+
+function sync() {
+  const k = key();
+  const show3 = k === "web" || k === "both";
+  const show4 = k === "coach" || k === "both" || k === "explore";
+  $("#q3").hidden = !show3;
+  $("#q4").hidden = !show4;
+  $("#q4 legend label").textContent = "4. ¿Qué te gustaría poder decidir o cambiar con el acompañamiento?";
+}
+f.addEventListener("change", sync);
+
+function bad(id, cond) { $(id).classList.toggle("bad", cond); return cond; }
+
+f.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const k = key();
+  let wrong = false;
+  wrong = bad("#q1", !k) || wrong;
+  wrong = bad("#q2", !f.elements.a2.value.trim()) || wrong;
+  if (!$("#q3").hidden) wrong = bad("#q3", !f.querySelector('input[name="r3"]:checked')) || wrong;
+  if (!$("#q4").hidden) wrong = bad("#q4", !f.elements.a4.value.trim()) || wrong;
+  wrong = bad("#q6", !f.elements.a6.value.trim()) || wrong;
+  wrong = bad("#q7", f.elements.a7.value.replace(/\D/g, "").length < 8) || wrong;
+  if (wrong) { document.querySelector(".bad").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+
+  const L = [
+    (DE ? "¡Hola " + DE + "!" : "¡Hola Asthor!") + " Completé el formulario *Contanos tu proyecto*:",
+    "",
+    "*1. ¿Qué quiero trabajar?* " + f.elements.r1.value,
+    "*2. Mi negocio:* " + f.elements.a2.value.trim(),
+  ];
+  const r3 = f.querySelector('input[name="r3"]:checked');
+  if (!$("#q3").hidden && r3) L.push("*3. ¿Tengo claro qué servicio ofrecer?* " + r3.value);
+  if (!$("#q4").hidden) L.push("*4. Qué quiero decidir o cambiar:* " + f.elements.a4.value.trim());
+  if (f.elements.a5.value.trim()) L.push("*5. Mi página o perfil:* " + f.elements.a5.value.trim());
+  L.push("*6. Nombre:* " + f.elements.a6.value.trim(), "*7. WhatsApp:* " + f.elements.a7.value.trim());
+  const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(L.join("\n"));
+  $("#again").href = url;
+  $("#page").classList.add("done");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  $("#again").click();
+});
+sync();
+</script>
+</body>
+</html>
